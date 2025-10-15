@@ -161,19 +161,28 @@
       >
         <section id="charts-container" class="h-full basis-full shrink-0">
           <div class="h-[36%] flex flex-col items-center pb-10">
-            <p class="font-bold text-lg">Resultado Final</p>
+            <p id="final-money-title" class="font-bold text-lg hidden">
+              Resultado Final
+            </p>
             <canvas id="final-money-distribution"></canvas>
           </div>
           <div class="h-[56%] flex flex-col items-center">
-            <p class="font-bold text-lg">Progressão</p>
+            <p id="progression-title" class="font-bold text-lg hidden">
+              Progressão
+            </p>
             <canvas id="progression"></canvas>
           </div>
         </section>
         <section
           id="table-container"
-          class="h-full overflow-y-auto basis-full shrink-0"
+          class="h-full overflow-y-auto basis-full shrink-0 hidden"
         >
-          <p class="font-bold text-lg text-center">Resultados Mensais</p>
+          <p
+            id="results-table-title"
+            class="font-bold text-lg text-center hidden"
+          >
+            Resultados Mensais
+          </p>
           <table
             id="results-table"
             class="w-full max-h-full border border-separate"

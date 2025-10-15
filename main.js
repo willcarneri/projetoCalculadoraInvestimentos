@@ -9,6 +9,12 @@ const clearFormButton = document.getElementById('clear-form');
 let doughnutChartReference = {};
 let progressionChartReference = {};
 
+document.addEventListener('DOMContentLoaded', () => {
+  document.getElementById('final-money-title').classList.add('hidden');
+  document.getElementById('progression-title').classList.add('hidden');
+  document.getElementById('results-table-title').classList.add('hidden');
+});
+
 const columnsArray = [
   { columnLabel: 'Mês', accessor: 'month' },
   {
@@ -45,6 +51,11 @@ function renderProgression(evt) {
   if (document.querySelector('.error')) {
     return;
   }
+
+  document.getElementById('table-container').classList.remove('hidden');
+  document.getElementById('final-money-title').classList.remove('hidden');
+  document.getElementById('progression-title').classList.remove('hidden');
+  document.getElementById('results-table-title').classList.remove('hidden');
 
   resetCharts();
 
@@ -160,6 +171,16 @@ function clearForm() {
   form['tax-rate'].value = '';
 
   resetCharts();
+
+  const tableElement = document.getElementById('results-table');
+  if (tableElement) {
+    tableElement.innerHTML = '';
+  }
+
+  document.getElementById('table-container').classList.add('hidden');
+  document.getElementById('final-money-title').classList.add('hidden');
+  document.getElementById('progression-title').classList.add('hidden');
+  document.getElementById('results-table-title').classList.add('hidden');
 
   const errorInputsContainers = document.querySelectorAll('.error');
 
